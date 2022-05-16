@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmploymentData.API", "..\EmploymentData.API\EmploymentData.API.csproj", "{158B1B6E-BA1D-49F8-80EE-DCD36BADC479}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{158B1B6E-BA1D-49F8-80EE-DCD36BADC479}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{158B1B6E-BA1D-49F8-80EE-DCD36BADC479}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{158B1B6E-BA1D-49F8-80EE-DCD36BADC479}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{158B1B6E-BA1D-49F8-80EE-DCD36BADC479}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E86ECB85-EDB6-4D4D-8F7D-F086C7DB2A58}
+	EndGlobalSection
+EndGlobal
