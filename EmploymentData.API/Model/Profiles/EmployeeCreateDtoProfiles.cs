@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using EmploymentData.API.Dto;
+using EmploymentData.API.Model.Data;
 using EmploymentData.API.Models;
 
 namespace EmploymentData.API.Model.Profiles
@@ -9,7 +10,10 @@ namespace EmploymentData.API.Model.Profiles
         public EmployeeCreateDtoProfiles()
         {
             //Source => Destination
-            CreateMap<EmployeeCreateDto, Employee>();
+            //CreateMap<Source, Destination>()
+            //.ForSourceMember(src => src.ReadOnlyProperty, opt => opt.Ignore())
+            CreateMap<EmployeeCreateDto, Employee>().IgnoreAllVirtual();
+            //expression.ForMember(property.Name, opt => opt.Ignore());
         }
     }
 }

@@ -19,12 +19,11 @@ namespace EmploymentData.API.Controllers
             _employeeRepository = employeeRepository;
             _mapper = mapper;
         }
-        // GET: api/<PrescrptionController>
-        [HttpGet]
+        // GET: api/<EmployeeController>
+        [HttpGet] 
         public ActionResult<IEnumerable<ReadEmploymentDto>> Get()
         {
             var employees = _employeeRepository.GetAll();
-
 
             var employeeDto = _mapper.Map<IEnumerable<ReadEmploymentDto>>(employees);
 
