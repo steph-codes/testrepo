@@ -48,7 +48,7 @@ namespace EmploymentData.API.Controllers
         }
 
         [HttpPost]
-        public ActionResult<ReadEmploymentDto> CreateEmployee(
+        public  ActionResult<ReadEmploymentDto> CreateEmployee(
             EmployeeCreateDto employeeCreateDto)
         {
 
@@ -60,9 +60,53 @@ namespace EmploymentData.API.Controllers
 
             //Mapp from Employee to its Dtod
             var employeeReadDto = _mapper.Map<ReadEmploymentDto>(employeeModel);
-
+            //if (await _employeeRepository.SaveChanges())
+            //{
+            //    return Ok(employeeModel);
+            //}
+            //return BadRequest();
+            //return employeeReadDto;
             return CreatedAtRoute(nameof(GetEmployeeById),
                 new { Id = employeeReadDto.EmpId }, employeeReadDto);
         }
+
+        [HttpPut("id")]
+        public async Task<ActionResult<ReadEmploymentDto>> update(int id, Employee employee)
+        {
+            var employees = _employeeRepository.Get(id);
+            if (employees == null)
+            {
+                return NotFound(id);
+            }
+            //return (_mapper.Map<ReadEmploymentDto>(employees));
+            //_mapper.Map(employee, employees);
+            employees.EmpName = employee.EmpName;
+
+            _employeeRepository.Update(employees);
+            return Ok(_mapper.Map<ReadEmploymentDto>(employees));
+            //if (await _employeeRepository.Update())
+            //{
+            //    return Ok(_mapper.Map<ReadEmploymentDto>(employees));
+            //}
+            //return BadRequest();
+        }
+
+        //public async Task<ActionResult<ReadEmploymentDto>> Delete(int id)
+        //{
+        //    var employees = _employeeRepository.Get(id);
+        //    if (employees == null)
+        //    {
+        //        return NotFound(id);
+        //    }
+        //    _employeeRepository.Delete(employees);
+
+        //    if (await _employeeRepository.SaveChanges())
+        //    {
+        //        return Ok();
+        //    }
+        //    return BadRequest();
+        //}
+
     }
+
 }

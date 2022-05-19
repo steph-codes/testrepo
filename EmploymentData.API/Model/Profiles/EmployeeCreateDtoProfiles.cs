@@ -10,10 +10,11 @@ namespace EmploymentData.API.Model.Profiles
         public EmployeeCreateDtoProfiles()
         {
             //Source => Destination
+            
+            CreateMap<EmployeeCreateDto, Employee>();
+            //expression.ForMember(property.Name, opt => opt.Ignore());
             //CreateMap<Source, Destination>()
             //.ForSourceMember(src => src.ReadOnlyProperty, opt => opt.Ignore())
-            CreateMap<EmployeeCreateDto, Employee>().IgnoreAllVirtual();
-            //expression.ForMember(property.Name, opt => opt.Ignore());
         }
     }
 }

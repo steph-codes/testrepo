@@ -11,8 +11,8 @@ namespace EmploymentData.API.Model.Profiles
         {
             // Source -> Destination
             //maps Models => Dto
-            CreateMap<Employee, ReadEmploymentDto>()
-                .ForMember(x => x.CompanyId, opt => opt.Ignore());
+            CreateMap<Employee, ReadEmploymentDto>();
+              //  .ForMember(x => x.CompanyId, opt => opt.Ignore());
             
             //Mapper.CreateMap<Employee, EmployeeReadDtoProfiles>().IgnoreAllVirtual();
         }
